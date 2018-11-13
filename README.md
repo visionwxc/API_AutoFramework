@@ -1,2 +1,2 @@
 # API_AutoFramework
-简略的自动化api测试框架
+简单的自动化api测试框架
