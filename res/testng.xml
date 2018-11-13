@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test" parallel="false" preserve-order="true" verbose="1">
+    <test name="PostApiTest">
+        <classes>
+            <!--指向需要测试的类-->
+            <class name="com.qa.test.PostApiTest">
+                <methods>
+                    <!--指向类中的方法-->
+                    <include name="postApiTest"></include>
+                    <include name="testGet"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--这个listener替换原本的testngreport-->
+    <listeners>
+        <listener class-name="com.qa.report.ExtentTestNGReporterListener"></listener>
+    </listeners>
+</suite>

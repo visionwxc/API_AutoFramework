@@ -2,6 +2,7 @@ package com.qa.restclient;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -49,6 +50,14 @@ public class RestClient {
         }
         CloseableHttpResponse httpResponse = httpclient.execute(httppost);
 
+        return httpResponse;
+    }
+    //delete方法
+    public CloseableHttpResponse deleteApi(String url) throws ClientProtocolException, IOException {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpDelete httpdel = new HttpDelete(url);
+        //发送delete请求
+        CloseableHttpResponse httpResponse = httpclient.execute(httpdel);
         return httpResponse;
     }
 }
