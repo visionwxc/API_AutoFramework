@@ -26,17 +26,17 @@ import static com.qa.util.TestUtil.dtt;
 
 public class PostApiTest extends TestBase{
     private static final Logger logger = LoggerFactory.getLogger(PostApiTest.class);
-    TestBase testBase;
-    String host;
-    String url;
-    RestClient restClient;
-    CloseableHttpResponse closeableHttpResponse;
+    private TestBase testBase;
+    private String host;
+    private String url;
+    private RestClient restClient;
+    private CloseableHttpResponse closeableHttpResponse;
     //Excel路径
-    String testCaseExcel;
+    private String testCaseExcel;
     //header
-    HashMap<String ,String> postHeader = new HashMap<String, String>();
+    private HashMap<String ,String> postHeader = new HashMap<String, String>();
     //token路径
-    String tokenPath;
+    private String tokenPath;
 
     @BeforeClass
     public void setUp(){
