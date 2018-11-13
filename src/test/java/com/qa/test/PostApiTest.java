@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.HashMap;
 
-import static com.qa.util.TestUtil.dtt;
+import static com.qa.util.TestUtil.getData;
 
 public class PostApiTest extends TestBase{
     private static final Logger logger = LoggerFactory.getLogger(PostApiTest.class);
@@ -51,12 +51,12 @@ public class PostApiTest extends TestBase{
 
     @DataProvider(name = "postData")
     public Object[][] post() throws IOException{
-        return dtt(testCaseExcel,0);
+        return getData(testCaseExcel,0);
     }
 
     @DataProvider(name = "get")
     public Object[][] get() throws IOException{
-        return dtt(testCaseExcel,1);
+        return getData(testCaseExcel,1);
     }
 
     @Test(dataProvider = "postData")

@@ -35,7 +35,7 @@ public class TestUtil {
     }
 
     //遍历excel，sheet参数
-    public static Object[][] dtt(String filePath,int sheetId) throws IOException {
+    public static Object[][] getData(String filePath,int sheetId) throws IOException {
 
         File file = new File(filePath);
         FileInputStream fis = new FileInputStream(file);
