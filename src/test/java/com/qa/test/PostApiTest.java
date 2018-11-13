@@ -82,9 +82,9 @@ public class PostApiTest extends TestBase{
         String userJsonString = JSON.toJSONString(parameters);
         closeableHttpResponse = restClient.post(url,userJsonString,postHeader);
         int statusCode = TestUtil.getStatusCode(closeableHttpResponse);
-        Assert.assertEquals(statusCode,RESPONSE_STATUS_CODE_201,"返回值不是201");
-        Reporter.log("状态码 ："+statusCode);
-        Reporter.log("接口地址 ："+url);
+        Assert.assertEquals(statusCode,RESPONSE_STATUS_CODE_201,"response code is not 201");
+        Reporter.log("status code ："+statusCode);
+        Reporter.log("api address ："+url);
     }
 
     @Test(dataProvider = "get")
@@ -92,8 +92,8 @@ public class PostApiTest extends TestBase{
         closeableHttpResponse = restClient.get(host + url);
         int statusCode = TestUtil.getStatusCode(closeableHttpResponse);
         Assert.assertEquals(statusCode,RESPONSE_STATUS_CODE_200,"状态值不是200");
-        Reporter.log("状态码 ："+statusCode);
-        Reporter.log("接口地址 ："+ host + url);
+        Reporter.log("status code ："+statusCode);
+        Reporter.log("api address ："+ host + url);
     }
 
     @Test
@@ -101,13 +101,13 @@ public class PostApiTest extends TestBase{
         closeableHttpResponse = restClient.get(tokenPath);
         int statusCode = TestUtil.getStatusCode(closeableHttpResponse);
         Assert.assertEquals(statusCode,RESPONSE_STATUS_CODE_200);
-        System.out.println("返回成功");
+        System.out.println("success");
         HashMap<String,String> tokenMap = TestUtil.getToken(closeableHttpResponse,"$.data.guestToken");
         Assert.assertTrue(tokenMap.containsKey("token"));
     }
 
     @AfterClass
     public void endTest(){
-        System.out.println("测试结束");
+        System.out.println("test end");
     }
 }

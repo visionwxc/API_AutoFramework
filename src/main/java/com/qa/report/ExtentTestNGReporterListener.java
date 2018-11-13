@@ -107,6 +107,8 @@ public class ExtentTestNGReporterListener implements IReporter {
         htmlReporter.config().setDocumentTitle("api自动化测试报告");
         htmlReporter.config().setReportName("api自动化测试报告");
 
+        //解决中文乱码问题
+        htmlReporter.config().setEncoding("utf-8");
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         // htmlReporter.config().setTheme(Theme.STANDARD);
