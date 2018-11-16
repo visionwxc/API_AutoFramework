@@ -34,9 +34,7 @@ public class RestClient {
         //创建一个HttpGet请求对象
         HttpGet httpGet = new HttpGet(url);
         //执行请求
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse)client.execute(httpGet);
-
-        return httpResponse;
+        return (CloseableHttpResponse)client.execute(httpGet);
     }
 
     //get 带请求头信息
@@ -46,9 +44,7 @@ public class RestClient {
         for (Map.Entry<String, String> entry : headMap.entrySet()) {
             httpGet.addHeader(entry.getKey(),entry.getValue());
         }
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse)client.execute(httpGet);
-
-        return httpResponse;
+        return (CloseableHttpResponse)client.execute(httpGet);
     }
 
     //post 方法
@@ -59,16 +55,13 @@ public class RestClient {
         for (Map.Entry<String, String> entry : headMap.entrySet()) {
             httppost.addHeader(entry.getKey(),entry.getValue());
         }
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse)client.execute(httppost);
-
-        return httpResponse;
+        return (CloseableHttpResponse)client.execute(httppost);
     }
     //delete方法
     public CloseableHttpResponse deleteApi(String url) throws ClientProtocolException, IOException {
 //        CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpDelete httpdel = new HttpDelete(url);
         //发送delete请求
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse)client.execute(httpdel);
-        return httpResponse;
+        return (CloseableHttpResponse)client.execute(httpdel);
     }
 }
