@@ -10,12 +10,9 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-
-import static com.qa.util.TestUtil.dtt;
 
 public class GetApiTest extends TestBase {
     TestBase testBase;

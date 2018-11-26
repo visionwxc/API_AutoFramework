@@ -12,7 +12,7 @@ import java.util.Properties;
  * 这是一个基类
  */
 public class TestBase {
-    private static final Logger logger = LoggerFactory.getLogger(TestBase.class);
+    public static final Logger logger = LoggerFactory.getLogger(TestBase.class);
     public Properties prop;
     public static final int RESPONSE_STATUS_CODE_200 = 200;
     public static final int RESPONSE_STATUS_CODE_201 = 201;
